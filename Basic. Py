@@ -1,0 +1,32 @@
+# python flask file
+
+from flask import Flask
+from flask_wtf import Flaskform
+from wtforms import Stringfield,submitfield
+from wtforms. Validators import datarequired
+
+app= Flask (__name__) 
+
+app. Config['secret key']='mysecretkey'
+
+Class Inform(Flask) 
+
+Breed=stringfield('what breed are you?) 
+Submit=submitfield('click me') 
+
+@app.route('/',method='GET,POST') 
+   def index() :
+
+    Form=Inform() 
+
+   if form. Validate_on_submit ():
+    Session ['breed']=form.breed.data
+   Flash(f"you just change your breed to:{session['breed']}") 
+
+
+  return redirect(url_for('index')) 
+
+return render_template('index.html',form=form) 
+
+if __name__=='__main__':
+app. run(debug=true) 
