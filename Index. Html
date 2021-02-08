@@ -1,0 +1,28 @@
+#html file
+
+<!DOCTYPE html>
+<html lang="en" Dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>project</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
+{% for mess in get_flashed_message%}
+<div class="alert alert_warning alert_disimissable fade_show" role='alert'>
+<button type="button" Class='fade close' data_dismiss='alert' aria_label='alert'>
+<span aria-hidden="true">&times;</span>
+</button>
+{{Mess}}
+</div>
+{% endfor %}
+
+<form method=['post']
+{{Form_hidden_tags()}}
+{{Form.breed.data}}
+{{form.submit.data()}}
+</form>
+
+</body>
+</html>
